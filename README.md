@@ -1,46 +1,54 @@
-# Getting Started with Create React App
+# Automated Token Purchase Tool
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Automated Token Purchase Tool is a React application designed to automatically monitor the addition of liquidity for a specific token on the Binance Smart Chain (BSC) and execute a token buy operation a specified number of times when liquidity is added. The tool utilizes the PancakeSwap router contract and the BSC testnet for testing purposes.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+1. Clone the repository to your local machine:
 
-### `npm start`
+```bash
+git clone https://github.com/mohitchandel/auto-buy-token.git
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. Install the project dependencies:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+cd automated-token-purchase-tool
+npm install
+```
 
-### `npm test`
+3. Start the development server:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm start
 
-### `npm run build`
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The application will open in your default web browser at http://localhost:3000.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Open the application in your web browser.
 
-### `npm run eject`
+Fill in the required inputs:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. `Token Address`: Provide the address (BEP20) of the token you want to monitor for liquidity.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. `Private Key`: Provide the private key associated with your wallet for buying tokens.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3. `Amount to Buy`: Specify the amount of the token you want to buy in each iteration.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. `Number of Buys`: Specify the number of times to buy the token whenever liquidity is added. Click the "Start Automated Buys" button to begin monitoring liquidity and automated token purchases.
 
-## Learn More
+### Important Notes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Ensure that you have a valid Ethereum wallet with BNB balance on the BSC testnet to cover gas fees.
+- The tool is for educational and testing purposes. Use caution and do not expose sensitive private keys or perform transactions on mainnet without thorough testing.
+- The application utilizes the PancakeSwap router contract and BSC testnet for testing purposes. Modify the contract addresses and ABIs for use on mainnet.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Dependencies
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [React](https://reactjs.org/)
+- [antd (Ant Design)](https://ant.design/)
+- [ethers](https://docs.ethers.io/v5/)
