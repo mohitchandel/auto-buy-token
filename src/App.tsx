@@ -17,6 +17,11 @@ function App() {
   const bnbAddress = "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd";
   const provider = new ethers.JsonRpcProvider(bscTestnetUrl);
 
+  /**
+   * The function `handleBuyClick` is an asynchronous function that handles the logic for buying tokens
+   * and monitoring liquidity on the PancakeSwap platform in a TypeScript React application.
+   * @returns The function does not explicitly return anything.
+   */
   async function handleBuyClick() {
     try {
       if (
@@ -62,6 +67,17 @@ function App() {
     }
   }
 
+  /**
+   * The `buyTokens` function allows a user to buy a specified amount of tokens multiple times using
+   * the PancakeSwap router contract.
+   * @param tokenAmount - The amount of tokens you want to buy. It should be of type
+   * ethers.BigNumberish, which is a BigNumber or a string representing a number.
+   * @param {number} numberOfBuys - The `numberOfBuys` parameter is the number of times you want to
+   * execute the token purchase transaction. It determines how many times the
+   * `swapExactTokensForETHSupportingFeeOnTransferTokens` function will be called in the for loop. Each
+   * iteration of the loop represents a separate token purchase transaction
+   * @returns The function does not explicitly return anything.
+   */
   async function buyTokens(
     tokenAmount: ethers.BigNumberish,
     numberOfBuys: number
